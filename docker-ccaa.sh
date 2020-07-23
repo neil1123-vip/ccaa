@@ -9,7 +9,6 @@ export PATH
 
 #各种路径设置
 aria2_url='https://github.com/q3aql/aria2-static-builds/releases/download/v1.35.0/aria2-1.35.0-linux-gnu-64bit-build1.tar.bz2'
-filebrowser_url='https://github.com/filebrowser/filebrowser/releases/download/v2.5.0/linux-amd64-filebrowser.tar.gz'
 master_url='https://github.com/helloxz/ccaa/archive/master.zip'
 ccaa_web_url='http://soft.xiaoz.org/linux/ccaa_web'
 
@@ -51,6 +50,8 @@ function install_aria2(){
 
 #安装File Browser文件管理器
 function install_file_browser(){
+        filebrowser_new_ver=$(wget -t2 -T3 -qO- "https://github.com/filebrowser/filebrowser/releases/latest" | grep -o '<title>Release.*' | head -n 1 | awk '{print $2}')
+        filebrowser_url="https://github.com/filebrowser/filebrowser/releases/download/${filebrowser_new_ver}/linux-amd64-filebrowser.tar.gz"
 	cd ./ccaa_tmp
 	#下载File Browser
 	wget ${filebrowser_url}
