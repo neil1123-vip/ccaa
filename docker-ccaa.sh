@@ -109,6 +109,7 @@ LICENSE
             exit 1
         }
     done
+    cd ..
 	#复制CCAA核心目录
 	mv ccaa-master/ccaa_dir /etc/ccaa
 	#创建aria2日志文件
