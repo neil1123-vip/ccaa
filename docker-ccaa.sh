@@ -87,7 +87,6 @@ function dealconf(){
     PROFILE_URL2="https://aria2c.now.sh"
     PROFILE_URL3="https://gh.p3terx.workers.dev/aria2.conf/master"
     PROFILE_LIST="
-aria2.conf
 clean.sh
 core
 script.conf
