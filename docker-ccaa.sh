@@ -135,7 +135,7 @@ function setting(){
 	aria2_conf_dir='/etc/ccaa'
 	mkdir -p ${downpath}
 	sed -i "s%dir=%dir=${downpath}%g" /etc/ccaa/aria2.conf
-	 sed -i "s@/root/.aria2/@${aria2_conf_dir}/@" ${aria2_conf_dir}/*.conf
+	sed -i "s@/root/.aria2/@${aria2_conf_dir}/@" ${aria2_conf_dir}/*.conf
 	sed -ir "s/rpc-secret=.*/rpc-secret=$PASS/g" /etc/ccaa/aria2.conf
 	sed -i "s@^#\(retry-on-.*=\).*@\1true@" /etc/ccaa/aria2.conf
 	sed -i "s@^\(max-connection-per-server=\).*@\132@" /etc/ccaa/aria2.conf
@@ -148,8 +148,8 @@ function setting(){
 	#更新tracker
 	sh /etc/ccaa/upbt.sh
 	#安装AriaNg
-	wget ${ccaa_web_url}
-	cp ccaa_web /usr/sbin/
+	#wget ${ccaa_web_url}
+	cp /etc/ccaa/ccaa_web /usr/sbin/
 	chmod +x /usr/sbin/ccaa_web
 	#启动服务
 	#nohup aria2c --conf-path=/etc/ccaa/aria2.conf > /var/log/aria2.log 2>&1 &
