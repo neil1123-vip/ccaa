@@ -115,6 +115,8 @@ LICENSE
 	mv ccaa-master/ccaa_dir /etc/ccaa
 	#创建aria2日志文件
 	touch /var/log/aria2.log
+	touch /var/log/ccaa_web.log
+	touch /var/log/fbrun.log
 	#upbt增加执行权限
 	chmod +x /etc/ccaa/*.sh
 	chmod +x /etc/ccaa/core
@@ -143,8 +145,6 @@ function setting(){
 	sed -i "s%ccaaDown%${downpath}%g" /etc/ccaa/config.json
 	#替换AriaNg服务器链接
 	#sed -i "s/server_ip/${osip}/g" /etc/ccaa/AriaNg/index.html
-	rm -rf /etc/ccaa/AriaNg/index.html
-	mv /etc/ccaa/AriaNg/dindex.html /etc/ccaa/AriaNg/index.html
 	#更新tracker
 	sh /etc/ccaa/upbt.sh
 	#安装AriaNg
