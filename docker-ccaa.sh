@@ -148,8 +148,8 @@ function setting(){
 	#更新tracker
 	sh /etc/ccaa/upbt.sh
 	#安装AriaNg
-	#wget ${ccaa_web_url}
-	cp ccaa-master/ccaa_web /usr/sbin/
+	wget ${ccaa_web_url}
+	cp ccaa_web /usr/sbin/
 	chmod +x /usr/sbin/ccaa_web
 	#启动服务
 	#nohup aria2c --conf-path=/etc/ccaa/aria2.conf > /var/log/aria2.log 2>&1 &
