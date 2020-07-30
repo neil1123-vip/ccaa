@@ -116,7 +116,6 @@ LICENSE
 	#创建aria2日志文件
 	touch /var/log/aria2.log
 	touch /var/log/ccaa_web.log
-	touch /var/log/fbrun.log
 	#upbt增加执行权限
 	chmod +x /etc/ccaa/*.sh
 	chmod +x /etc/ccaa/core
